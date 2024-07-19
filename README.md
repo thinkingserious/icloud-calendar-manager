@@ -28,7 +28,7 @@ export APPLE_PASSWORD='your_app_specific_password'
 
 - On Windows:
 
-```
+```bash
 set APPLE_ID=your_apple_id@example.com
 set APPLE_PASSWORD=your_app_specific_password
 ```
@@ -40,6 +40,104 @@ Note: Replace 'your_apple_id@example.com' with your actual Apple ID, and 'your_a
 - Go to https://appleid.apple.com/ and sign in.
 - In the Security section, click "Generate Password" under App-Specific Passwords.
 - Follow the steps to create a password and use this as your APPLE_PASSWORD.
+
+## Running in GitHub Codespaces
+
+### Using the Terminal
+
+1. **Fork the Repository:**
+
+   - Navigate to the repository on GitHub.
+   - Click the `Fork` button at the top right corner to create your own copy of the repository.
+
+2. **Create a Codespace:**
+
+   - Navigate to your forked repository on GitHub.
+   - Click the `Code` button.
+   - Select the `Codespaces` tab.
+   - Click `New codespace` to create a new Codespace.
+
+3. **Set up Environment Variables:**
+
+   - Once the Codespace is running, open the terminal.
+   - Set up the environment variables:
+
+     ```bash
+     echo 'export APPLE_ID="your_apple_id@example.com"' >> ~/.bashrc
+     echo 'export APPLE_PASSWORD="your_app_specific_password"' >> ~/.bashrc
+     source ~/.bashrc
+     ```
+
+4. **Install Required Libraries:**
+
+   - In the terminal, run:
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+5. **Modify the Script:**
+
+   - In the Codespace file explorer, open the script file (`icloud_calendar_manager.py`).
+   - Modify the `calendar_name` variable in the `if __name__ == "__main__":` block to match one of your iCloud calendar names.
+
+6. **Run the Script:**
+
+   - In the terminal, run:
+
+     ```bash
+     python icloud_calendar_manager.py
+     ```
+
+### Using the UI
+
+1. **Fork the Repository:**
+
+   - Navigate to the repository on GitHub.
+   - Click the `Fork` button at the top right corner to create your own copy of the repository.
+
+2. **Create a Codespace:**
+
+   - Navigate to your forked repository on GitHub.
+   - Click the `Code` button.
+   - Select the `Codespaces` tab.
+   - Click `New codespace` to create a new Codespace.
+
+3. **Add Secrets in Repository Settings:**
+
+   - Navigate to your forked repository on GitHub.
+   - Go to `Settings` > `Secrets and variables` > `Codespaces`.
+   - Click `New repository secret`.
+   - Add the following secrets:
+
+     - `APPLE_ID`: your_apple_id@example.com
+     - `APPLE_PASSWORD`: your_app_specific_password
+
+4. **Access Secrets in Codespace:**
+
+   - Once the Codespace is running, the secrets will be available as environment variables.
+
+5. **Install Required Libraries:**
+
+   - Open a terminal in the Codespace.
+   - Run the following command:
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+6. **Modify the Script:**
+
+   - In the Codespace file explorer, open the script file (`icloud_calendar_manager.py`).
+   - Modify the `calendar_name` variable in the `if __name__ == "__main__":` block to match one of your iCloud calendar names.
+
+7. **Run the Script:**
+
+   - In the terminal, run:
+
+     ```bash
+     python icloud_calendar_manager.py
+     ```
 
 ## Usage
 
